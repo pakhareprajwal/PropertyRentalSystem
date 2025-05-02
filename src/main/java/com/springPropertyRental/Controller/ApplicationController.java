@@ -22,7 +22,7 @@ public class ApplicationController {
 
 	 	//@GetMapping("/apply/{propertyId}")
 	    @GetMapping("/{propertyId}")
-	    public String showForm(@PathVariable int propertyId, Model model) {
+	    public String showForm(@PathVariable int propertyId,Model model) {
 	        Application application = new Application();
 	        application.setPropertyId(propertyId);
 	        model.addAttribute("application", application);
@@ -43,6 +43,11 @@ public class ApplicationController {
 	        return "userApplication.jsp";
 	    }
 
+	    @GetMapping("/deleteproperty/{id}")
+		public String deleteApplication(@PathVariable int id) {
+		    applicationRepo.deleteById(id);
+		    return "redirect:/AppFetch";
+		}
 	    
 	    
 //	    @RequestMapping("/appFetch")

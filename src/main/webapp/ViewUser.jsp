@@ -82,8 +82,8 @@
             <td>${u.cpassword}</td>
             <td>${u.phone}</td>
             <td>${u.address}</td>
-            <td><a href="<c:url value='/${u.sr_no}'/>">Edit</a></td>
-            <td><a href="<c:url value='/delete/${u.sr_no}'/>">Delete</a></td>
+            <td><a href="<c:url value='/${u.sr_no}'/>" onclick="return confirm('Are you sure you want to update this user details?');">Edit</a></td>
+            <td><a href="<c:url value='/delete/${u.sr_no}'/>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

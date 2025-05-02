@@ -12,8 +12,7 @@ public class Application {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    private int propertyId;
+	private int propertyId;
     private String fullName;
     private String email;
     private String phone;
